@@ -1,13 +1,14 @@
 <script lang="ts">
-	let count = 0;
+	import {BigNumber} from '@ethersproject/bignumber';
+	let count = BigNumber.from(0);
 
 	const increment = (): void => {
-		count += 1;
+		count = count.add(1);
 	};
 </script>
 
 <button on:click={increment}>
-	Clicks: {count}
+	Clicks: {count.toString()}
 </button>
 
 <style style lang="postcss">
